@@ -73,3 +73,6 @@ This file is published directly to GitHub Pages.
 
 ### 4. Slack‑Ready Summary
 A concise top‑5 summary is generated for quick review:
+
+# Page link
+https://rmallorybpc.github.io/real-estate-report/
