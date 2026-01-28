@@ -1,6 +1,6 @@
 # Real Estate Intelligence Agent (DMV Region)
 
-A fully automated, AI‑powered research system that scans the Washington DC, Maryland, and Virginia real estate market, identifies meaningful activity, scores opportunities, and publishes a clean daily report to GitHub Pages.
+A fully automated, AI‑powered research system that scans the Denver, CO real estate market, identifies meaningful activity, scores opportunities, and publishes a clean daily report to GitHub Pages.
 
 This project demonstrates how to combine Zapier, AI agents, and GitHub Pages to create a scalable, no‑code intelligence workflow suitable for analysts, agents, investors, and operators.
 
