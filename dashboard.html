@@ -88,6 +88,30 @@
             padding: 20px;
             border-radius: 8px;
         }
+        .dashboard-frame {
+            width: 100%;
+            min-height: 75vh;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+            background-color: #ffffff;
+        }
+        .dashboard-fallback {
+            margin-top: 18px;
+            font-size: 0.95em;
+            color: #5f6b75;
+        }
+        .dashboard-fallback a {
+            color: #1f4d73;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .dashboard-fallback a:hover {
+            text-decoration: underline;
+        }
+        .is-hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -96,17 +120,44 @@
             <div class="nav-brand">Real Estate Intelligence</div>
             <div class="nav-links">
                 <a class="nav-link" href="index.html">Report</a>
-                <a class="nav-link" href="dashboard.html">Embedded Dashboard</a>
-                <a class="nav-button" href="https://rmallorybpc-real-estate-dashboard.lovable.app/">Live Dashboard</a>
+                <a class="nav-link" href="dashboard.html">Dashboard</a>
+                <a class="nav-button" href="dashboard.html">View Dashboard</a>
             </div>
         </div>
         <div class="header">
             <h1>Dashboard</h1>
             <div class="subtitle">Market performance snapshots and key indicators</div>
         </div>
-        <div class="panel">
-            <p>This dashboard page is ready for KPI tiles, charts, and trend highlights. Tell me what metrics and visuals you want to add.</p>
+        <iframe
+            id="dashboard-frame"
+            class="dashboard-frame"
+            title="Real Estate Dashboard"
+            src="https://rmallorybpc-real-estate-dashboard.lovable.app/"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allow="fullscreen"
+        ></iframe>
+        <div id="dashboard-fallback" class="panel dashboard-fallback is-hidden">
+            Having trouble viewing the embedded dashboard? Open it in a new tab:
+            <a href="https://rmallorybpc-real-estate-dashboard.lovable.app/" target="_blank" rel="noopener">Launch Live Dashboard</a>.
         </div>
     </div>
+    <script>
+        const dashboardFrame = document.getElementById('dashboard-frame');
+        const fallback = document.getElementById('dashboard-fallback');
+        const fallbackTimer = setTimeout(() => {
+            fallback.classList.remove('is-hidden');
+        }, 6000);
+
+        dashboardFrame.addEventListener('load', () => {
+            clearTimeout(fallbackTimer);
+            fallback.classList.add('is-hidden');
+        });
+
+        dashboardFrame.addEventListener('error', () => {
+            clearTimeout(fallbackTimer);
+            fallback.classList.remove('is-hidden');
+        });
+    </script>
 </body>
 </html>
