@@ -1,0 +1,198 @@
+{
+  "report_metadata": {
+    "report_title": "Weekly Ross Jobs Report: Local Real Estate Intelligence",
+    "report_date": "2026-02-23",
+    "time_window": "Past 30 days",
+    "region": "Denver, CO",
+    "sources": ["Redfin", "Zillow", "LoopNet"],
+    "market_context": {
+      "median_home_price": "$571,250",
+      "price_change_yoy": "+1.6%",
+      "market_competitiveness": "55/100 (Somewhat Competitive)",
+      "days_on_market": "70 days average",
+      "mortgage_rates": "6.2% (30-year fixed)",
+      "market_trend": "Elevated inventory, buyers returning earlier than normal"
+    }
+  },
+  "high_priority_opportunities": [
+    {
+      "address": "2960 E Floyd Drive, Denver, CO 80210",
+      "category": "Residential",
+      "key_signal": "High-value luxury sale",
+      "price": "$3,700,000",
+      "details": "4 bed, 6 bath, 5,708 sqft",
+      "score": 9,
+      "reasoning": "Exceptional luxury transaction indicating strong high-end market activity",
+      "source": "Zillow",
+      "link": "https://www.zillow.com/homedetails/2960-E-Floyd-Dr-Denver-CO-80210/13388234_zpid/",
+      "date_sold": "2026-02-20",
+      "days_since_activity": 3
+    },
+    {
+      "address": "909 Bannock St, Denver, CO 80204",
+      "category": "Commercial",
+      "key_signal": "Prime retail space available",
+      "price": "Upon Request",
+      "details": "4,650 SF retail space in Golden Triangle, 25k daily traffic count",
+      "score": 8,
+      "reasoning": "Prime location with high foot traffic, immediate availability",
+      "source": "LoopNet",
+      "link": "https://www.loopnet.com/Listing/909-Bannock-St-Denver-CO/35921129/",
+      "date_available": "Within 30 days",
+      "days_since_activity": 1
+    },
+    {
+      "address": "1731 E 25th Avenue, Denver, CO 80205",
+      "category": "Residential",
+      "key_signal": "Sold above list price",
+      "price": "$970,000",
+      "details": "4 bed, 3 bath, 2,490 sqft, sold 2% over list after 43 days",
+      "score": 8,
+      "reasoning": "Strong buyer demand signal, sold above asking in competitive market",
+      "source": "Redfin/Zillow",
+      "link": "https://www.redfin.com/CO/Denver/1731-E-25th-Ave-80205/home/34087814",
+      "date_sold": "2026-02-20",
+      "days_since_activity": 3
+    }
+  ],
+  "medium_priority_opportunities": [
+    {
+      "address": "857 S Grant Street, Denver, CO 80209",
+      "category": "Residential",
+      "key_signal": "Sold at list price",
+      "price": "$889,500",
+      "details": "3 bed, 3 bath, 2,033 sqft, 30 days on market",
+      "score": 7,
+      "reasoning": "Stable pricing in desirable area, reasonable time on market",
+      "source": "Redfin/Zillow",
+      "link": "https://www.redfin.com/CO/Denver/857-S-Grant-St-80209/home/34130555",
+      "date_sold": "2026-02-20",
+      "days_since_activity": 3
+    },
+    {
+      "address": "727 Fairfax Street, Denver, CO 80220",
+      "category": "Residential",
+      "key_signal": "High-value sale",
+      "price": "$1,200,000",
+      "details": "4 bed, 4 bath, 3,551 sqft",
+      "score": 7,
+      "reasoning": "Strong high-end residential market activity",
+      "source": "Zillow",
+      "link": "https://www.zillow.com/homedetails/727-Fairfax-St-Denver-CO-80220/13394410_zpid/",
+      "date_sold": "2026-02-20",
+      "days_since_activity": 3
+    },
+    {
+      "address": "610 S Clinton Street #8B, Denver, CO 80247",
+      "category": "Residential",
+      "key_signal": "Price drop - sold 9% under list",
+      "price": "$105,000",
+      "details": "1 bed, 1 bath, 855 sqft condo, 137 days on market",
+      "score": 6,
+      "reasoning": "Significant price reduction indicates market pressure in lower-end segment",
+      "source": "Redfin/Zillow",
+      "link": "https://www.redfin.com/CO/Denver/610-S-Clinton-St-80247/unit-8B/home/34179024",
+      "date_sold": "2026-02-20",
+      "days_since_activity": 3
+    },
+    {
+      "address": "2696 S Colorado Blvd, Denver, CO 80222",
+      "category": "Commercial",
+      "key_signal": "Office/Medical space available",
+      "price": "$11.54/SF/YR",
+      "details": "Office/Medical space, available within 30 days",
+      "score": 6,
+      "reasoning": "Medical office opportunity in established corridor",
+      "source": "LoopNet",
+      "link": "https://www.loopnet.com/Listing/2696-S-Colorado-Blvd-Denver-CO/35172611/",
+      "date_available": "Within 30 days",
+      "days_since_activity": 1
+    },
+    {
+      "address": "800 E 64th Ave, Denver, CO 80229",
+      "category": "Commercial",
+      "key_signal": "Affordable flex space",
+      "price": "$10.00/SF/YR",
+      "details": "2,400 SF flex space, full build-out",
+      "score": 5,
+      "reasoning": "Competitive pricing for flex space, immediate availability",
+      "source": "LoopNet",
+      "link": "https://www.loopnet.com/Listing/800-E-64th-Ave-Denver-CO/25797875/",
+      "date_available": "Within 30 days",
+      "days_since_activity": 1
+    }
+  ],
+  "low_priority_opportunities": [
+    {
+      "address": "635 S Alton Way #12A, Denver, CO 80247",
+      "category": "Residential",
+      "key_signal": "Lower-end condo sale",
+      "price": "$185,000",
+      "details": "2 bed, 1 bath, 945 sqft condo",
+      "score": 4,
+      "reasoning": "Entry-level market activity, limited investment potential",
+      "source": "Redfin/Zillow",
+      "link": "https://www.redfin.com/CO/Denver/635-S-Alton-Way-80247/unit-12A/home/34180657",
+      "date_sold": "2026-02-20",
+      "days_since_activity": 3
+    },
+    {
+      "address": "2082 S Lincoln St, Denver, CO 80210",
+      "category": "Residential",
+      "key_signal": "Extended time on market",
+      "price": "$638,500",
+      "details": "3 bed, 2 bath, 1,620 sqft, 147 days on market, sold 2% under list",
+      "score": 4,
+      "reasoning": "Extended marketing period suggests pricing challenges",
+      "source": "Redfin/Zillow",
+      "link": "https://www.redfin.com/CO/Denver/2082-S-Lincoln-St-80210/home/34157225",
+      "date_sold": "2026-02-20",
+      "days_since_activity": 3
+    },
+    {
+      "address": "3016 S Grape Way, Denver, CO 80222",
+      "category": "Residential",
+      "key_signal": "Standard condo sale",
+      "price": "$415,000",
+      "details": "2 bed, 1 bath, 992 sqft condo",
+      "score": 3,
+      "reasoning": "Routine market transaction, limited strategic value",
+      "source": "Zillow",
+      "link": "https://www.zillow.com/homedetails/3016-S-Grape-Way-Denver-CO-80222/13413845_zpid/",
+      "date_sold": "2026-02-20",
+      "days_since_activity": 3
+    },
+    {
+      "address": "3236 S Fairfax Street, Denver, CO 80222",
+      "category": "Residential",
+      "key_signal": "Standard residential sale",
+      "price": "$570,000",
+      "details": "2 bed, 1 bath, 1,237 sqft",
+      "score": 3,
+      "reasoning": "Market-rate transaction, no special indicators",
+      "source": "Zillow",
+      "link": "https://www.zillow.com/homedetails/3236-S-Fairfax-St-Denver-CO-80222/13415207_zpid/",
+      "date_sold": "2026-02-20",
+      "days_since_activity": 3
+    }
+  ],
+  "market_insights": {
+    "key_trends": [
+      "Inventory elevated for January, providing more buyer choice",
+      "Buyers returning to market earlier than typical seasonal pattern",
+      "Price growth expected to be modest (9-11% seasonal increase)",
+      "High-end luxury market showing strong activity",
+      "Commercial retail spaces in prime locations commanding premium"
+    ],
+    "opportunities_summary": {
+      "total_opportunities": 12,
+      "high_priority_count": 3,
+      "medium_priority_count": 5,
+      "low_priority_count": 4,
+      "residential_count": 9,
+      "commercial_count": 3,
+      "average_score": 5.8
+    },
+    "forecast": "2026 expected to be active but balanced market with modest price appreciation, elevated inventory preventing rapid price acceleration"
+  }
+}
