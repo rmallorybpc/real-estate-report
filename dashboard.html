@@ -22,20 +22,51 @@
         }
         .top-nav {
             display: flex;
-            justify-content: flex-start;
-            margin-bottom: 15px;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 12px;
+        }
+        .nav-brand {
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            color: #2c3e50;
+            font-size: 0.95em;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .nav-link {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+        .nav-link:hover {
+            background-color: #ecf0f1;
         }
         .nav-button {
-            background-color: #2c3e50;
+            background: linear-gradient(135deg, #1f4d73, #2c3e50);
             color: #ffffff;
             text-decoration: none;
-            padding: 10px 18px;
-            border-radius: 6px;
-            font-weight: 600;
-            letter-spacing: 0.2px;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            box-shadow: 0 10px 18px rgba(31, 77, 115, 0.25);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         .nav-button:hover {
-            background-color: #1f2d3a;
+            background: linear-gradient(135deg, #1a3f5e, #243445);
+            box-shadow: 0 12px 22px rgba(31, 77, 115, 0.32);
+            transform: translateY(-1px);
         }
         .header {
             border-bottom: 3px solid #2c3e50;
@@ -62,7 +93,12 @@
 <body>
     <div class="container">
         <div class="top-nav">
-            <a class="nav-button" href="index.html">Back to Report</a>
+            <div class="nav-brand">Real Estate Intelligence</div>
+            <div class="nav-links">
+                <a class="nav-link" href="index.html">Report</a>
+                <a class="nav-link" href="dashboard.html">Embedded Dashboard</a>
+                <a class="nav-button" href="https://rmallorybpc-real-estate-dashboard.lovable.app/">Live Dashboard</a>
+            </div>
         </div>
         <div class="header">
             <h1>Dashboard</h1>
