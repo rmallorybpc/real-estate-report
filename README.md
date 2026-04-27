@@ -134,3 +134,15 @@ If the page shows an "Unable to load report data" message:
 2. If needed, restore last known good JSON from git history.
 3. Commit and push again.
 4. Refresh the live page.
+
+### Pre-commit JSON guard (recommended)
+
+This repo includes a validator script at scripts/validate-data-json.sh and a hook at .githooks/pre-commit.
+
+Set it once per clone:
+
+1. Run: git config core.hooksPath .githooks
+2. Run: chmod +x .githooks/pre-commit scripts/validate-data-json.sh
+3. Optional manual check: scripts/validate-data-json.sh
+
+After setup, git commit will fail if data.json is malformed or missing required fields.

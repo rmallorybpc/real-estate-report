@@ -377,9 +377,82 @@
             `;
         }
 
-        async function loadReport() {
-            const app = document.getElementById('app-content');
+        function validateOpportunity(item, index, sectionName, errors) {
+            const requiredFields = ['address', 'category', 'key_signal', 'score', 'source', 'link'];
+            requiredFields.forEach((field) => {
+                if (!(field in item) || item[field] == null || item[field] === '') {
+                    errors.push(`${sectionName}[${index}] missing required field: ${field}`);
+                }
+            });
+        }
 
+        function validateReportSchema(reportData) {
+            const errors = [];
+            const requiredTopLevel = [
+                'report_metadata',
+                'high_priority_opportunities',
+                'medium_priority_opportunities',
+                'low_priority_opportunities'
+            ];
+
+            requiredTopLevel.forEach((key) => {
+                if (!(key in reportData)) {
+                    errors.push(`Missing top-level key: ${key}`);
+                }
+            });
+
+            if (reportData.report_metadata && typeof reportData.report_metadata === 'object') {
+                ['report_title', 'report_date', 'time_window', 'region'].forEach((field) => {
+                    if (!(field in reportData.report_metadata) || !reportData.report_metadata[field]) {
+                        errors.push(`report_metadata missing required field: ${field}`);
+                    }
+                });
+            } else if ('report_metadata' in reportData) {
+                errors.push('report_metadata must be an object');
+            }
+
+            [
+                'high_priority_opportunities',
+                'medium_priority_opportunities',
+                'low_priority_opportunities'
+            ].forEach((sectionName) => {
+                const section = reportData[sectionName];
+                if (!Array.isArray(section)) {
+                    errors.push(`${sectionName} must be an array`);
+                    return;
+                }
+
+                section.forEach((item, index) => {
+                    if (!item || typeof item !== 'object' || Array.isArray(item)) {
+                        errors.push(`${sectionName}[${index}] must be an object`);
+                        return;
+                    }
+
+                    validateOpportunity(item, index, sectionName, errors);
+                });
+            });
+
+            return errors;
+        }
+
+        function renderErrorState(error, schemaErrors) {
+            const app = document.getElementById('app-content');
+            const listItems = (schemaErrors || []).map((item) => `<li>${escapeHtml(item)}</li>`).join('');
+            const schemaSection = listItems
+                ? `<p>Schema checks found:</p><ul>${listItems}</ul>`
+                : '';
+
+            app.innerHTML = `
+                <div class="error-state">
+                    <h2>Unable to load report data</h2>
+                    <p>Update <strong>data.json</strong> with valid JSON and refresh this page.</p>
+                    ${schemaSection}
+                    <p>Error detail: ${escapeHtml(error.message)}</p>
+                </div>
+            `;
+        }
+
+        async function loadReport() {
             try {
                 const response = await fetch('data.json', { cache: 'no-store' });
                 if (!response.ok) {
@@ -387,7 +460,15 @@
                 }
 
                 const reportData = await response.json();
+                const schemaErrors = validateReportSchema(reportData);
+                if (schemaErrors.length > 0) {
+                    const schemaError = new Error('Payload failed schema validation.');
+                    schemaError.schemaErrors = schemaErrors;
+                    throw schemaError;
+                }
+
                 const reportMetadata = reportData.report_metadata || {};
+                const app = document.getElementById('app-content');
 
                 updateHeader(reportMetadata);
                 updateFooter(reportMetadata);
@@ -404,13 +485,7 @@
                     ${renderInsights(reportData)}
                 `;
             } catch (error) {
-                app.innerHTML = `
-                    <div class="error-state">
-                        <h2>Unable to load report data</h2>
-                        <p>Update <strong>data.json</strong> with valid JSON and refresh this page.</p>
-                        <p>Error detail: ${escapeHtml(error.message)}</p>
-                    </div>
-                `;
+                renderErrorState(error, error.schemaErrors || []);
             }
         }
 

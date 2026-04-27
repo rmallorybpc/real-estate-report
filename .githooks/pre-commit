@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+scripts/validate-data-json.sh
