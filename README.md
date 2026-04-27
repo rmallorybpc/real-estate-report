@@ -76,3 +76,61 @@ A concise top‑5 summary is generated for quick review:
 
 # Page link
 https://rmallorybpc.github.io/real-estate-report/
+
+---
+
+## Live Page Update Workflow (Copy/Paste)
+
+The live report page now renders directly from data.json.
+
+### Fast update steps
+
+1. Open data.json.
+2. Replace the full file contents with your latest Zapier JSON payload.
+3. Validate JSON format (no trailing commas, all quotes closed).
+4. Save and commit changes.
+5. Push to main.
+6. Refresh the GitHub Pages URL.
+
+### Required top-level keys
+
+Your payload should include:
+
+- report_metadata
+- high_priority_opportunities
+- medium_priority_opportunities
+- low_priority_opportunities
+
+Optional but supported:
+
+- scoring_model
+- market_insights
+- report_metadata.market_context
+
+### Per-opportunity fields
+
+Each item in priority arrays should include at least:
+
+- address
+- category
+- key_signal
+- score
+- source
+- link
+
+Optional fields shown when present:
+
+- price
+- details
+- reasoning
+- date_sold
+- date_available
+
+### Malformed JSON fallback
+
+If the page shows an "Unable to load report data" message:
+
+1. Re-open data.json and fix syntax errors.
+2. If needed, restore last known good JSON from git history.
+3. Commit and push again.
+4. Refresh the live page.
